@@ -1,5 +1,5 @@
 import React from 'react'
-import Image1 from 'Utilities/Image1.png';
+import Image1 from 'Images/Image1.png';
 
 export default function () {
     return (
