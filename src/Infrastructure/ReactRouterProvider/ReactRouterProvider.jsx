@@ -5,14 +5,12 @@ import { ErrorPage, Home } from '../../UI/Pages'
 function ReactRouterProvider() {
     return (
         <HashRouter>
-            <div className='overflow-hidden'>
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="*">
                         <ErrorPage />
                     </Route>
                 </Switch>
-            </div>
         </HashRouter>
 
     )
