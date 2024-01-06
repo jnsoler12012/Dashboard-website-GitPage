@@ -9,6 +9,7 @@
       {
         "modules": [
           "@mui/material",
+          "react-icons",
           "@mui/x-data-grid",
           "@fullcalendar/core",
           "@fullcalendar/daygrid",

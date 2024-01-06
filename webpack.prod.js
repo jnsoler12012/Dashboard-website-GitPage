@@ -3,7 +3,9 @@ const WebpackShellPluginNext = require('webpack-shell-plugin-next');
 const TerserPlugin = require('terser-webpack-plugin');
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 module.exports = merge(common, {
     mode: "production",
@@ -70,13 +72,16 @@ module.exports = merge(common, {
         },
         minimize: true,
         minimizer: [
+            new UglifyJsPlugin({
+                extractComments: true,
+            }),
             new TerserPlugin({
+                extractComments: false,
                 terserOptions: {
                     output: {
                         comments: false,
                     },
                 },
-                extractComments: false,
             }),
         ],
     },

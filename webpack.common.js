@@ -14,14 +14,18 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json'],
         alias: {
             Images: path.resolve(__dirname, 'src/UI/assets/img/'),
-            // MUI imports
+            // MUI imports react-icons
             MUI_Material: '@mui/material',
+            Web_React_Icons: 'react-icons',
         },
     },
     plugins: [
         new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: path.resolve(__dirname, 'src/index.template.ejs'),
+            favicon: path.resolve(__dirname, 'src/UI/assets/ico/dashboard.ico'),
             title: 'custom name',
-            template: './src/base-index.html',
+            inject: true,
         }),
     ],
     module: {
