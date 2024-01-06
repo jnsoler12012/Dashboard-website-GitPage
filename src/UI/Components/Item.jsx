@@ -19,6 +19,7 @@ export default function ({ title, to, icon, selected, setSelected }) {
                 }}
                 onClick={() => setSelected(title)}
                 icon={icon}
+                component={<div></div>}
             >
                 <Typography>{title}</Typography>
             </MenuItem>

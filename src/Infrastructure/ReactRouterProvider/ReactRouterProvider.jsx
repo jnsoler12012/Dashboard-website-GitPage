@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Route, Switch, HashRouter } from 'react-router-dom'
-import { ErrorPage, Dashboard, Team } from '../../UI/Pages'
+import { ErrorPage, Dashboard, Team, Contacts, Invoices, Form, Calendar} from '../../UI/Pages'
 import { Topbar, Sidebar } from '../../UI/Components/global';
 
 function ReactRouterProvider() {
@@ -15,6 +15,10 @@ function ReactRouterProvider() {
                     <Switch>
                         <Route exact path="/" component={Dashboard} />
                         <Route exact path="/team" component={Team} />
+                        <Route exact path="/contacts" component={Contacts} />
+                        <Route exact path="/invoices" component={Invoices} />
+                        <Route exact path="/form" component={Form} />
+                        <Route exact path="/calendar" component={Calendar} />
                         <Route path="*">
                             <ErrorPage />
                         </Route>
