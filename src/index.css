@@ -30,3 +30,7 @@ body,
 ::-webkit-scrollbar-track:hover {
     background: #555;
 }
+
+.transparentBackground:hover {
+    background: rgba(49, 0, 0, 1) !important
+}

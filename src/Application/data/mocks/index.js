@@ -1,6 +1,7 @@
-import { default as mockData } from './mockData.js'
+import { mockDataTeam, mockDataContacts, mockDataInvoices } from './mockData.js'
 import { default as mockGeoFeatures } from './mockGeoFeatures.js'
 
 export {
-    mockData
+    mockDataTeam, mockDataContacts, mockDataInvoices,
+    mockGeoFeatures
 }

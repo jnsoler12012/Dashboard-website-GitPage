@@ -14,9 +14,14 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json'],
         alias: {
             Images: path.resolve(__dirname, 'src/UI/assets/img/'),
+
+            DataCustom: path.resolve(__dirname, 'src/Application/data/'),
             // MUI imports react-icons
+
             MUI_Material: '@mui/material',
+            MUI_Data_Grid: "@mui/x-data-grid",
             Web_React_Icons: 'react-icons',
+            Full_Calendar: '@fullcalendar'
         },
     },
     plugins: [
@@ -38,6 +43,7 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env', '@babel/preset-react'],
+                        compact: false
                     },
 
                 },
