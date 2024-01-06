@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "startServer": "serve -s .",
-    "start": "webpack-dev-server --host 0.0.0.0 --allowed-hosts all --open --config webpack.dev.js",
+    "start": "webpack-dev-server --host 0.0.0.0 --allowed-hosts all --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d ."
