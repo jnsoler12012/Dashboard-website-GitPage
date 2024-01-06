@@ -9,9 +9,16 @@
       {
         "modules": [
           "@mui/material",
-          "@mui/icons-material",
-          "@emotion/react",
-          "@emotion/styled"
+          "@mui/x-data-grid",
+          "@fullcalendar/core",
+          "@fullcalendar/daygrid",
+          "@fullcalendar/timegrid",
+          "@fullcalendar/list",
+          "@nivo/core",
+          "@nivo/pie",
+          "@nivo/line",
+          "@nivo/bar",
+          "@nivo/geo"
         ]
       }
     ],
