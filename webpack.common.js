@@ -10,9 +10,12 @@ module.exports = {
         filename: '[contenthash].js',
     },
     resolve: {
+        modules: ['node_modules'],
         extensions: ['.js', '.jsx', '.json'],
         alias: {
             Images: path.resolve(__dirname, 'src/UI/assets/img/'),
+            // MUI imports
+            MUI_Material: '@mui/material',
         },
     },
     plugins: [
@@ -46,7 +49,7 @@ module.exports = {
             {
                 test: /\.css$/i,
                 include: path.resolve(__dirname, 'src'),
-                use: ['style-loader', 'css-loader', 'postcss-loader'],
+                use: ['style-loader', 'css-loader'],
             },
         ],
     },
