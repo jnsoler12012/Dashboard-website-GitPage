@@ -21,7 +21,11 @@ module.exports = {
             MUI_Material: '@mui/material',
             MUI_Data_Grid: "@mui/x-data-grid",
             Web_React_Icons: 'react-icons',
-            Full_Calendar: '@fullcalendar'
+            Full_Calendar: '@fullcalendar',
+            Nivo_Bar: '@nivo/bar',
+            Nivo_Pie: '@nivo/pie',
+            Nivo_Line: '@nivo/line',
+            Nivo_Geo: '@nivo/geo'
         },
     },
     plugins: [
