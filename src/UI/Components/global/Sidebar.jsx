@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createRef, useContext, useState } from "react";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 
 import { Box, IconButton, Typography, useTheme } from 'MUI_Material';
@@ -10,10 +10,15 @@ import { HiOutlineMenu } from "Web_React_Icons/hi";
 import { Item } from "../";
 import { tokens } from "DataCustom/theme";
 import User from 'Images/user.png';
+import { MainContext } from "../../../Infrastructure/MainContextProvider";
 
 export default function () {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const { mainValues, setMainValues } = useContext(MainContext)
+  const { sidebar } = mainValues
+
+
 
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
@@ -45,7 +50,9 @@ export default function () {
         },
       }}>
       <Sidebar
+        id='navbar-info'
         collapsed={isCollapsed}
+        ref={sidebar.ref}
       >
         <Menu iconShape="square">
 
@@ -177,28 +184,28 @@ export default function () {
             </Typography>
             <Item
               title="Bar Chart"
-              to="/bar"
+              to="/chart-bar"
               icon={<MdOutlineBarChart />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Pie Chart"
-              to="/pie"
+              to="/chart-pie"
               icon={<MdOutlinePieChart />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Line Chart"
-              to="/line"
+              to="/chart-line"
               icon={<MdOutlineTimeline />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Geography Chart"
-              to="/geography"
+              to="/chart-geography"
               icon={<IoMapOutline />}
               selected={selected}
               setSelected={setSelected}

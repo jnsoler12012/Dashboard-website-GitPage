@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { formatDate } from "Full_Calendar/core";
 import { default as FullCalendar } from "Full_Calendar/react";
 import { default as dayGridPlugin } from "Full_Calendar/daygrid";
@@ -14,12 +14,16 @@ import {
 
 import { Header } from "../Components";
 import { tokens } from "../../Application/data/theme";
+import { MainContext } from "../../Infrastructure/MainContextProvider";
 
 
 
 export default function () {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    const { mainValues, setMainValues } = useContext(MainContext)
+    const { sidebar } = mainValues
+    console.log(sidebar)
 
     const [currentEvents, setCurrentEvents] = useState([])
 
@@ -45,8 +49,15 @@ export default function () {
         }
     }
 
+    const handleResize = (info) => {
+
+    }
+
     return (
-        <Box>
+        <Box
+            mt='20px'
+            ml="20px"
+        >
             <Header title='CALENDAR' subtitle="Full Calendar Interactive Page" />
             <Box display='flex' justifyContent='space-between'>
                 <Box
@@ -87,15 +98,18 @@ export default function () {
                 </Box>
 
                 <Box flex='1 1 100%'
-                    ml='15px'
+                    m='0 1rem'
                     id='calendar-container-body'
                     sx={{
                         '& .fc-list-day-cushion': {
-                            backgroundColor: 'rgba(0, 0, 0, 1) !important'
+                            backgroundColor: `${colors.blueAccent[700]} !important`,
+                        },
+                        '& .fc-list-event': {
+                            backgroundColor: `#1F2A40 !important`,
                         }
                     }}>
                     <FullCalendar
-                        height="75vh"
+                        height={76.5 * sidebar.height / 100}
                         plugins={[
                             dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin
                         ]}
@@ -111,13 +125,12 @@ export default function () {
                         dayMaxEvents={true}
                         select={handleDateClick}
                         eventClick={handleEventClick}
+                        windowResize={handleResize}
                         eventsSet={(events) => setCurrentEvents(events)}
                         initialEvents={[
-                            { id: "1234", title: "All-day event", date: "2022-09-15" },
-                            { id: "4321", title: "Timed event", date: "2022-09-28" }
+                            { id: "1234", title: "All-day event", date: "2024-02-15" },
+                            { id: "4321", title: "Timed event", date: "2024-01-28" }
                         ]}
-
-
                     >
 
                     </FullCalendar>
