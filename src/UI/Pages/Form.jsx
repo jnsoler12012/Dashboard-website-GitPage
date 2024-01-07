@@ -36,7 +36,7 @@ export default function () {
     const isNonMobile = useMediaQuery("(min-width:600px)")
 
     const handleFormSubmit = (values) => {
-        console.log(values);
+        
     }
 
     return (

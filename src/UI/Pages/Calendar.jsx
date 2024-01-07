@@ -23,7 +23,6 @@ export default function () {
     const colors = tokens(theme.palette.mode);
     const { mainValues, setMainValues } = useContext(MainContext)
     const { sidebar } = mainValues
-    console.log(sidebar)
 
     const [currentEvents, setCurrentEvents] = useState([])
 
