@@ -29,7 +29,6 @@ export default function ({ children }) {
     const observer = useMemo(
         () =>
             new ResizeObserver((entries) => {
-                console.log(entries[0].target.getBoundingClientRect())
                 setMainValues((preValues) => {
                     return ({
                         ...preValues,
@@ -43,17 +42,6 @@ export default function ({ children }) {
             }),
         []
     );
-
-
-
-    useEffect(() => {
-        console.log(mainValues)
-
-        return () => {
-            console.log(mainValues)
-        }
-    }, [mainValues])
-
 
     return (
         <MainContext.Provider value={{
